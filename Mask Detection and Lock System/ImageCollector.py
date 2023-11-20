@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-haar_data = cv2.CascadeClassifier("C:\\Users\\sanja\\AppData\\Local\\Programs\\Python\\Python310\\Lib\\site-packages\\cv2\\data\\haarcascade_frontalface_default.xml")
+haar_data = cv2.CascadeClassifier("C:\\Users\\sanja\\AppData\\Local\\Programs\\Python\\Python310\\Lib\\site-packages\\cv2\\data\\haarcascade_frontalface_default.xml") #location to haarcascade_frontalface_default
 
 #THE FOLLOWING TO BIG BLOCKS OF CODE NEEDS TO BE EXECUTED ONLY ONCE SINCE IT IS FOR COLLECTING IMAGE FOR TRAINING THE MODEL.
 #BUT YES, FURTHER IMAGES CAN BE ADDED WHICH WILL INCREASE THE ACCURACY OF THE OUTPUT
