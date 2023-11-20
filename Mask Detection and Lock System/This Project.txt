@@ -1,0 +1,32 @@
+26th Jan 2022
+I decided to make a program which recognises mask and unlocks a lock earlier for some national webinar or something to be conducted by 
+Robotics club of VIT Bhopal.
+I used these videos as the major source for the code :
+https://www.youtube.com/watch?v=csYkGeJ5bCM&t=3s&ab_channel=BrainMentorsPvtLtd
+This one for mask detection
+
+https://www.youtube.com/watch?v=TIFGqgmILaE&ab_channel=KNOWLEDGEDOCTOR
+This one for integrating with lock in arduino.
+I took a look into the possibility of taking the second one completely, but it needed tensorflow and keras. Even though I downloaded Keras
+as well as the other, the later further required drivers, and other stuff(refer official site in google for tenserflow). So I decided the
+current way.
+
+I came to a problem of bad assignment in detectMultiScale and finally after sometime realised I had given wrong input that is videocapture(0)
+instead of the img extracted from it.
+Edit (3rd Aug 2023) : While I was having the same issue, the problem was that the "haarcascade_frontalface_default.xml" file was missing. Just place it in the same directory 
+
+
+Then I came to a new problem of "[ WARN:0@10.497] global D:\a\opencv-python\opencv-python\opencv\modules\videoio\src\cap_msmf.cpp (539) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback"
+and my images was not saving into the file.
+I found this in stack overflow :
+https://stackoverflow.com/questions/53888878/cv2-warn0-terminating-async-callback-when-attempting-to-take-a-picture
+But then I realised that it was saving in a directory two steps back(python folder in programming)
+So the two .npy files for with and without masks is now in Robotics folder(also in working folder but no use)
+
+Now, for the machine learning model scikit learn is downloaded as is used.
+
+UPDATE (3rd Aug 2023)
+
+I tried looking everywhere for the Main.py file which is the file which detects the mask/no mask (main file) but was nowhere to be found. Ultimately using this same text file I got the youtube video I used for making this. I searched the source code with the company's name in google and got into their github profile. Then I surfed through their repos and finally found the Mask Detection repo where the code which I needed was there. 
+
+Here is the github repo : https://github.com/sheisol310/Mask-Detection/blob/main/Detect%20Mask.py
